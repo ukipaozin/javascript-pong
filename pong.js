@@ -1,3 +1,8 @@
+//aqui irei criar minha bolinha
+let xbolinha = 300
+let ybolinha = 200
+let tambolinha = 25
+
 function setup(){
     //aqui vou criar minha "mesa"
     createCanvas(600,400);
@@ -6,4 +11,11 @@ function setup(){
 function draw(){
     //aqui vou por a cor da "mesa"
     background(255,255,240);
+}
+
+//funçao bolinha
+function criarbolinha(xbolinha,ybolinha,tambolinha){
+    circle(xbolinha,ybolinha,tambolinha);
+
+    criabolinha(xbolinha, ybolinha, tambolinha)
 }
