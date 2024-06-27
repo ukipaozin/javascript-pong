@@ -6,8 +6,4 @@ function setup(){
 function draw(){
     //aqui vou por a cor da "mesa"
     backgound(255,255,240);
-
-
-
-
 }
