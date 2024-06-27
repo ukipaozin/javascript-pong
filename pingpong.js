@@ -5,7 +5,7 @@ createcanvas(600,400);
 
 function draw(){
     //aqui vou por a cor da "mesa"
-    backgound(255,255,255);
+    backgound(255,255,240);
 
 
 
