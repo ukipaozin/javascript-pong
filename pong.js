@@ -10,7 +10,7 @@ function setup(){
 
 function draw(){
     //aqui vou por a cor da "mesa"
-    background(224,255,255);
+    background(220,255,255);
     criarbolinha(xbolinha,ybolinha,tambolinha)
 }
 
