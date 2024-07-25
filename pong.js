@@ -36,7 +36,7 @@ function borda(){
     if (xbolinha > width || x<0){
         xvelo *= -1;
     }
-    if (ybolinha > height || ybolinha){
-        yvelo *=-1;
+    if (ybolinha > height || ybolinha<0){
+        yvelo *= -1;
     }
 }
