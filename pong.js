@@ -9,13 +9,14 @@ let xvelo = 6
 let yvelo = 2
 function setup(){
     //aqui vou criar minha "mesa"
-    createCanvas(600,400);
+    createCanvas(1200,800);
 }
 
 function draw(){
     //aqui vou por a cor da "mesa"
     background(200,255,255);
     criarbolinha(xbolinha,ybolinha,tambolinha)
+    function movebolinha
 }
 
 //funçao bolinha
