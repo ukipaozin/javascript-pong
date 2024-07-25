@@ -11,11 +11,12 @@ function setup(){
 function draw(){
     //aqui vou por a cor da "mesa"
     background(224,255,255);
+    criarbolinha(xbolinha,ybolinha,tambolinha)
 }
 
 //funçao bolinha
 function criarbolinha(xbolinha,ybolinha,tambolinha){
     circle(xbolinha,ybolinha,tambolinha);
 
-    criabolinha(xbolinha, ybolinha, tambolinha)
+
 }
