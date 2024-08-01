@@ -5,8 +5,8 @@ let tamBolinha = 25;
 let raiobolinha = tamBolinha/2;
 let xRaquete = 5;
 let yRaquete = 150;
-let larguraRaquete = 10;
-let alturaRaquete = 25;
+let larguraRaquete = 90;
+let alturaRaquete = 10;
 let xvelo= 6;
 let yvelo= 6;
 
