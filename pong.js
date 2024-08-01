@@ -27,7 +27,6 @@ function criarbolinha(xbolinha,ybolinha,tambolinha){
 }
 //funçao move bolinha
 function movebolinha(){
-    yvelo = ybolinha + yvelo
     xbolinha = xvelo + xbolinha
     ybolinha = yvelo + ybolinha
 }
