@@ -2,7 +2,7 @@
 let xBolinha = 300;
 let yBolinha = 200;
 let tamBolinha = 25;
-let xvelocidadeBolinha = 40;
+let xvelocidadeBolinha = 10;
 let yvelocidadeBolinha = 6;
 
 function setup(){
@@ -10,7 +10,7 @@ function setup(){
 }
 
 function draw(){
-    background(18,128,50); 
+    background(140,255,255); 
     criaBolinha(xBolinha, yBolinha, tamBolinha);
     moveBolinha();
     Borda();
