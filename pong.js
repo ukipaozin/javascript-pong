@@ -32,10 +32,10 @@ function movebolinha(){
 }
 
 function borda(){
-    if (xbolinha > width || xbolinha<0){
+    if (xbolinha > width || xbolinha < 0){
         xvelo *= -1;
     }
-    if (ybolinha > height || ybolinha<0){
+    if (ybolinha > height || ybolinha < 0){
         yvelo *= -1;
     }
 }
