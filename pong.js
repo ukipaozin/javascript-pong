@@ -27,13 +27,13 @@ function criarbolinha(xbolinha,ybolinha,tambolinha){
 }
 //funçao move bolinha
 function movebolinha(){
-    yvelo = 1000/ybolinha -500/(ybolinha -500/ybolinha -500) + yvelo
+    yvelo = ybolinha + yvelo
     xbolinha = xvelo + xbolinha
     ybolinha = yvelo + ybolinha
 }
 
 function borda(){
-    if (xbolinha > width || x<0){
+    if (xbolinha > width || xbolinha<0){
         xvelo *= -1;
     }
     if (ybolinha > height || ybolinha<0){
