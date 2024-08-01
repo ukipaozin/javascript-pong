@@ -65,4 +65,34 @@ function colideRaquete(){
     if(xBolinha - raiobolinha < xRaquete + larguraRaquete && yBolinha - raiobolinha < yRaquete + alturaRaquete && yBolinha + raiobolinha > yRaquete){
         xvelo *= -1;
     }
+
 }
+
+// Criar um elemento HTML para exibir o placar
+const scoreElement = document.createElement("div");
+scoreElement.id = "score";
+document.body.appendChild(scoreElement);
+
+// Inicializar os pontos para ambos os jogadores
+let player1Score = 0;
+let player2Score = 0;
+
+// Função para atualizar o placar
+function updateScore(player) {
+  if (player === 1) {
+    player1Score++;
+  } else if (player === 2) {
+    player2Score++;
+  }
+  scoreElement.innerHTML = `Player 1: ${player1Score} - Player 2: ${player2Score}`;
+}
+
+// Exemplo de como chamar a função updateScore quando um jogador marca um ponto
+// (substitua pela lógica do seu jogo)
+function playerScoresPoint(player) {
+  updateScore(player);
+}
+
+// Exemplo de como usar a função playerScoresPoint
+playerScoresPoint(1); // Player 1 marca um ponto
+playerScoresPoint(2); // Player 2 marca um ponto
