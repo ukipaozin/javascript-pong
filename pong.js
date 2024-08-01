@@ -65,8 +65,8 @@ function colideRaquete(){
     if(xBolinha - raiobolinha < xRaquete + larguraRaquete && yBolinha - raiobolinha < yRaquete + alturaRaquete && yBolinha + raiobolinha > yRaquete){
         xvelo *= -1;
     }
-
 }
+
 
 // Criar um elemento HTML para exibir o placar
 const scoreElement = document.createElement("div");
@@ -76,6 +76,18 @@ document.body.appendChild(scoreElement);
 // Inicializar os pontos para ambos os jogadores
 let player1Score = 0;
 let player2Score = 0;
+
+// Definir as variáveis para a bola
+let ballX = 200;
+let ballY = 200;
+let ballSpeedX = 3;
+let ballSpeedY = 3;
+let ballRadius = 10;
+
+// Definir as variáveis para as paredes
+let player1WallX = 50;
+let player2WallX = 550;
+let wallHeight = 200;
 
 // Função para atualizar o placar
 function updateScore(player) {
@@ -87,12 +99,62 @@ function updateScore(player) {
   scoreElement.innerHTML = `Player 1: ${player1Score} - Player 2: ${player2Score}`;
 }
 
-// Exemplo de como chamar a função updateScore quando um jogador marca um ponto
-// (substitua pela lógica do seu jogo)
-function playerScoresPoint(player) {
-  updateScore(player);
+// Função para verificar se a bola bateu na parede do adversário
+function checkCollision() {
+  if (ballX - ballRadius < player1WallX) {
+    // Bola bateu na parede do jogador 1
+    updateScore(2);
+    ballSpeedX = -ballSpeedX;
+  } else if (ballX + ballRadius > player2WallX) {
+    // Bola bateu na parede do jogador 2
+    updateScore(1);
+    ballSpeedX = -ballSpeedX;
+  }
 }
 
-// Exemplo de como usar a função playerScoresPoint
-playerScoresPoint(1); // Player 1 marca um ponto
-playerScoresPoint(2); // Player 2 marca um ponto
+// Função para atualizar a posição da bola
+function updateBallPosition() {
+  ballX += ballSpeedX;
+  ballY += ballSpeedY;
+
+  // Verificar se a bola bateu na parede superior ou inferior
+  if (ballY - ballRadius < 0 || ballY + ballRadius > 400) {
+    ballSpeedY = -ballSpeedY;
+  }
+
+  // Verificar se a bola bateu na parede do adversário
+  checkCollision();
+}
+
+// Função para desenhar a bola e as paredes
+function draw() {
+  const canvas = document.getElementById("canvas");
+  const ctx = canvas.getContext("2d");
+
+  // Desenhar a bola
+  ctx.beginPath();
+  ctx.arc(ballX, ballY, ballRadius, 0, 2 * Math.PI);
+  ctx.fillStyle = "white";
+  ctx.fill();
+
+  // Desenhar as paredes
+  ctx.beginPath();
+  ctx.rect(player1WallX, 0, 10, wallHeight);
+  ctx.fillStyle = "white";
+  ctx.fill();
+
+  ctx.beginPath();
+  ctx.rect(player2WallX, 0, 10, wallHeight);
+  ctx.fillStyle = "white";
+  ctx.fill();
+}
+
+// Função para atualizar o jogo
+function update() {
+  updateBallPosition();
+  draw();
+  requestAnimationFrame(update);
+}
+
+// Iniciar o jogo
+update();
