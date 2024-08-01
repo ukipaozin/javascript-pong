@@ -3,15 +3,15 @@ let xBolinha = 300;
 let yBolinha = 200;
 let tamBolinha = 25;
 let raiobolinha = tamBolinha/2;
-let xRaquete = 10;
-let yRaquete = 10;
-let larguraRaquete = 150;
-let alturaRaquete = 90;
-let xvelo= 10;
+let xRaquete = 5;
+let yRaquete = 150;
+let larguraRaquete = 10;
+let alturaRaquete = 5;
+let xvelo= 6;
 let yvelo= 6;
 
 function setup(){
-    createCanvas(1200,800);
+    createCanvas(600,400);
 }
 
 function draw(){
