@@ -28,6 +28,7 @@ function draw(){
 }
 
 function criaBolinha(xBolinha, yBolinha,tamBolinha){
+    fill ("orange")
     circle (xBolinha,yBolinha,tamBolinha);
 }
 
@@ -49,7 +50,7 @@ function Borda(){
 }
 
 function criaRaquete(xRaquete,yRaquete,larguraRaquete,alturaRaquete){
-    fill("blue");
+    fill("green");
     rect(xRaquete,yRaquete,larguraRaquete,alturaRaquete);
 }
 
