@@ -2,6 +2,11 @@
 let xBolinha = 300;
 let yBolinha = 200;
 let tamBolinha = 25;
+let raiobolinha = tamBolinha/2;
+let xRaquete = 10;
+let yRaquete = 10;
+let larguraRaquete = 150;
+let alturaRaquete = 90;
 let xvelo= 10;
 let yvelo= 6;
 
@@ -14,6 +19,9 @@ function draw(){
     criaBolinha(xBolinha, yBolinha, tamBolinha);
     moveBolinha();
     Borda();
+    criaRaquete(xRaquete, yRaquete, larguraRaquete, alturaRaquete);
+    MovimentaRaquete();
+    colideRaquete();
 }
 
 function criaBolinha(xBolinha, yBolinha,tamBolinha){
@@ -36,6 +44,25 @@ function Borda(){
     }
 }
 //criar função raquete
-function criaRaquete({
 
-})
+function criaRaquete(xRaquete,yRaquete,larguraRaquete,alturaRaquete){
+    fill("blue");
+    rect(xRaquete,yRaquete,larguraRaquete,alturaRaquete);
+}
+//função responsavel pelo movimento da raquete
+
+function MovimentaRaquete(){
+if(keyIsDown(UP_ARROW)){
+    yRaquete -=10;
+}
+if(keyIsDown(DOWN_ARROW)){
+    yRaquete +=10;
+}
+}
+//função responsavel pela bolinha bater na aquete ela retornar na posição contrario
+
+function colideRaquete(){
+    if(xBolinha - raiobolinha < xRaquete + larguraRaquete && yBolinha - raiobolinha < yRaquete + alturaRaquete && yBolinha + raiobolinha > yRaquete){
+        xvelo *= -1;
+    }
+}
