@@ -5,8 +5,8 @@ let ybolinha = 200
 let tambolinha = 25
 
 //config bolinha eba uau que legal aaaaaaaaaaaa primeiro velocidade
-let xvelo = 2
-let yvelo = 0
+let xvelo = 4
+let yvelo = 7
 function setup(){
     //aqui vou criar minha "mesa"
     createCanvas(1000,700);
