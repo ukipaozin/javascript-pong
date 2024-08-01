@@ -22,15 +22,7 @@ function criaBolinha(xBolinha, yBolinha,tamBolinha){
 
 function moveBolinha(){
 
-    if (yBolinha<500) {
-        if(yvelo<10){
-            yvelo=yvelo+0.001
-        }
-    } else {
-        if(yvelo>10){
-            yvelo=yvelo-0.001
-        }
-    }
+
     xBolinha = xvelo + xBolinha;
     yBolinha = yvelo + yBolinha;
 }
